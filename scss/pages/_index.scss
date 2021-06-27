@@ -1,0 +1,426 @@
+// header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  .nav {
+    display: flex;
+    .m-none {
+      @include mobile {
+        display: none;
+      }
+    }
+    .cart {
+      @include mobile {
+        margin-top: 8px;
+      }
+    }
+    a {
+      color: $color_gray_dark;
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 20px;
+      padding-left: 32px;
+      transition: all 0.3s ease;
+      &:hover {
+        color: darken($color_gray_dark, 20%);
+      }
+      .material-icons {
+        font-size: 20px;
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+
+      h3 {
+        display: inline-block;
+        @include mobile {
+          display: none;
+        }
+      }
+      em {
+        display: none;
+        @include mobile {
+          display: block;
+          height: 16px;
+          padding: 1px 4px;
+          position: absolute;
+          top: -7px;
+          right: -7px;
+          background-color: $color_primary;
+          color: #fff;
+          font-size: 12px;
+          border-radius: 50%;
+          line-height: 16px;
+        }
+      }
+    }
+    .burger span {
+      display: none;
+      @include mobile {
+        display: block;
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+// bannrer
+.banner {
+  height: calc(100vh - 56px);
+  width: 100%;
+  background: url('../..//images/index1.jpg') top no-repeat;
+  background-size: cover;
+
+  @include mobile {
+    background-position: center;
+    height: 60vh;
+  }
+
+  .banner-wrap {
+    padding-top: 295px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include mobile {
+      padding-top: 101px;
+      justify-content: center;
+    }
+  }
+
+  .banner-text {
+    color: #fff;
+    width: 445px;
+    @include mobile {
+      max-width: 345px;
+    }
+
+    h1 {
+      font-weight: 700;
+      @include mobile {
+        font-size: 32px;
+        line-height: 48px;
+      }
+    }
+    p {
+      margin-bottom: 16px;
+      @include mobile {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    a {
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 30px;
+      text-align: center;
+      border-radius: 30px;
+      max-width: 350px;
+      padding: 13px 0;
+      transition: all 0.3s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+      @include mobile {
+        max-width: 345px;
+        font-size: 28px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+// content
+.content {
+  width: 100%;
+  @include mobile {
+    margin-bottom: 40px;
+  }
+  .item-row {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+    .intro {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .intro-box {
+        max-width: 350px;
+        @include mobile {
+          margin-top: 8px;
+          margin-bottom: 32px;
+        }
+        a {
+          color: $color_secondary;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          &:hover {
+            color: $color_primary;
+          }
+        }
+      }
+    }
+    .plan-intro {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include mobile {
+        width: 100%;
+      }
+      .plan-box {
+        max-width: 350px;
+        margin: auto;
+        @include mobile {
+          li {
+            margin-bottom: 20px;
+            h3 {
+              margin-top: 8px;
+            }
+          }
+        }
+        .plan-check-more {
+          max-width: 350px;
+          border: 2px solid #000;
+          border-radius: 30px;
+          color: #000;
+          text-align: center;
+          padding: 18px 0;
+          font-size: 20px;
+          transition: all 0.3s ease;
+          &:hover {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+    .intro-img {
+      width: 50%;
+      @include mobile {
+        width: 100%;
+      }
+      img {
+        height: 555px;
+        object-fit: cover;
+        object-position: left top;
+        @include mobile {
+          height: 350px;
+        }
+      }
+      .plan-img {
+        height: 1080px;
+        object-fit: cover;
+        object-position: center top;
+        @include mobile {
+          height: 680px;
+        }
+      }
+    }
+  }
+  .item-row-reverse {
+    @include mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+// products
+.bg-gray {
+  background: $color_gray_light;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include mobile {
+    padding-bottom: 12px;
+  }
+  width: 100%;
+  .products {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      max-width: 350px;
+      .product-img {
+        position: relative;
+        img {
+          height: 540px;
+          object-fit: cover;
+          @include mobile {
+            min-width: 345px;
+            height: 350px;
+            object-fit: cover;
+            object-position: center center;
+          }
+        }
+        .mask {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.3);
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+        p {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .card-body {
+        a {
+          margin-top: 8px;
+          color: #000;
+          transition: all 0.3s ease;
+          &:hover {
+            color: $color_primary;
+          }
+        }
+        h3 {
+          margin-bottom: 16px;
+        }
+        p {
+          @include mobile {
+            margin-bottom: 24px;
+          }
+          span {
+            color: $color_gray_dark;
+            text-decoration: line-through;
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// main-product
+.main-product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  @include mobile {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .main-product-img {
+    max-width: 730px;
+    img {
+      height: 520px;
+      object-fit: cover;
+    }
+  }
+  .main-intro {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile {
+      h2 {
+        margin-top: 8px;
+      }
+    }
+    a {
+      color: $color_secondary;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      &:hover {
+        color: $color_primary;
+      }
+    }
+  }
+}
+// subscription
+.bg-sub {
+  width: 100%;
+  background: url('../../images/index10.jpg') center center;
+  background-size: cover;
+  height: 600px;
+  .subscription {
+    padding-top: 312px;
+
+    h2 {
+      color: $color_gray_dark;
+    }
+    .input-wrap {
+      margin-top: 20px;
+      width: 100%;
+      input {
+        border: 2px solid $color-primary;
+        font-size: 16px;
+        padding: 20px 0 20px 16px;
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+        outline: none;
+      }
+      button {
+        border: 2px solid $color-primary;
+        font-size: 16px;
+        padding: 20px 27px;
+        border-radius: 0 4px 4px 0;
+        background: $color-primary;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background: darken($color-primary, 5%);
+          border: 2px solid darken($color-primary, 5%);
+        }
+      }
+    }
+  }
+}
+
+.bg-primary {
+  background: $color-primary;
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    .left-logo {
+      display: flex;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+        justify-content: space-between;
+      }
+      p {
+        color: #fff;
+        padding-left: 20px;
+      }
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      @include mobile {
+        display: none;
+      }
+
+      a {
+        padding-left: 36px;
+        color: #fff;
+        transition: all 0.3s ease;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}

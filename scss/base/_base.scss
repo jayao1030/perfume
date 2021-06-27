@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-family;
+}
+
+.container {
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  font-weight: 400;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
