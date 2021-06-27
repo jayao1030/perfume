@@ -9,8 +9,13 @@
 
 // components
 
+// layout
+@import "layout/header";
+@import "layout/footer";
+
 
 // pages
 @import "pages/index";
 @import "pages/product";
+@import "pages/product-detail";
 

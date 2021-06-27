@@ -1,0 +1,36 @@
+.bg-primary {
+  background: $color-primary;
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    .left-logo {
+      display: flex;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+        justify-content: space-between;
+      }
+      p {
+        color: #fff;
+        padding-left: 20px;
+      }
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      @include mobile {
+        display: none;
+      }
+
+      a {
+        padding-left: 36px;
+        color: #fff;
+        transition: all 0.3s ease;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}

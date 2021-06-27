@@ -1,0 +1,116 @@
+.product-detail {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @include mobile {
+    margin-top: 40px;
+    flex-direction: column;
+  }
+
+  .top-img {
+    max-width: 66%;
+    margin-bottom: 30px;
+    @include mobile {
+      max-width: 100%;
+    }
+    img {
+      height: 460px;
+      object-fit: cover;
+      @include mobile {
+        height: 220px;
+      }
+    }
+  }
+  .middle-img{
+    margin-bottom: 30px;
+    max-width: 66%;
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      max-width: 100%;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .left,
+    .right {
+      max-width: 48%;
+      @include mobile {
+        max-width: 100%;
+        margin-top: 16px;
+      }
+      img {
+        height: 640px;
+        object-fit: cover;
+      }
+    }
+  }
+   .bottom-img {
+    max-width: 66%;
+    margin-bottom: 30px;
+    @include mobile {
+      max-width: 100%;
+    }
+    img {
+      height: 460px;
+      object-fit: cover;
+    }
+  }
+}
+.detail-info {
+  position: absolute;
+  right: 0;
+  align-self: flex-start;
+  max-width: 31.5%;
+  @include mobile {
+    max-width: 100%;
+    position: static;
+    margin-bottom: 24px;
+  }
+  .input-wrap {
+    margin: 12px 0;
+    width: 100%;
+    input {
+      width: 45%;
+      border: 2px solid $color-primary;
+      font-size: 16px;
+      padding: 17px 0 16px 16px;
+      border-radius: 4px 0 0 4px;
+      border-right: none;
+      outline: none;
+    }
+    button {
+      width: 55%;
+      border: 2px solid $color-primary;
+      font-size: 16px;
+      padding: 16px 0px;
+      border-radius: 0 4px 4px 0;
+      background: $color-primary;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background: darken($color-primary, 5%);
+        border: 2px solid darken($color-primary, 5%);
+      }
+    }
+  }
+  .favorite {
+    display: flex;
+    align-items: center;
+    color: #000;
+    transition: all 0.3s ease;
+    .material-icons {
+      color: $color-primary;
+      &:hover {
+        color: $color-secondary;
+        transform: scale(1.1);
+      }
+    }
+    @include mobile {
+     margin-bottom: 40px;
+    }
+  }
+}

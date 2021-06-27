@@ -21,69 +21,72 @@
   flex-wrap: wrap;
   justify-content: space-between;
   @include mobile {
-   margin-top: 42px;
+    margin-top: 42px;
   }
-    .card {
-      max-width: 255px;
-      margin-bottom: 58px;
-      @include mobile {
-        max-width: 165px;
-        margin-bottom: 30px;
-      }
-      .product-img {
-        img {
-          height: 255px;
-          object-fit: cover;
-          object-position: center center;
-          @include mobile {
-            height: 165px;
-          }
+  .card {
+    max-width: 255px;
+    margin-bottom: 58px;
+    @include mobile {
+      max-width: 165px;
+      margin-bottom: 30px;
+    }
+    .product-img {
+      img {
+        height: 255px;
+        object-fit: cover;
+        object-position: center center;
+        @include mobile {
+          height: 165px;
         }
       }
-      .card-body {
+    }
+    .card-body {
+      a {
+        color: #000;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $color_primary;
+        }
+      }
+      p {
+        @include mobile {
+          margin-bottom: 24px;
+        }
+        span {
+          color: $color_gray_dark;
+          text-decoration: line-through;
+          padding-left: 8px;
+        }
+      }
+      .material-icons {
         a {
-          color: #000;
-          transition: all 0.3s ease;
+          padding-right: 11px;
+          color: $color_primary;
           &:hover {
-            color: $color_primary;
-          }
-        }
-        p {
-          @include mobile {
-            margin-bottom: 24px;
-          }
-          span {
-            color: $color_gray_dark;
-            text-decoration: line-through;
-            padding-left: 8px;
-          }
-        }
-        .material-icons {
-          a {
-            padding-right: 11px;
-            color: $color_primary;
-            &:hover {
-              color: #000;
-            }
+            color: #000;
           }
         }
       }
     }
+  }
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: center;
   li {
-    padding-right: 20px;
+    padding: 0 10px;
     a {
+      width: 20px;
+      text-align: center;
       color: #000;
       &:hover {
         color: $color_primary;
-        border-bottom: 1px solid $color_primary;
+        text-decoration: underline;
       }
+    }
+    .active {
+      color: $color_primary;
     }
   }
 }
-
